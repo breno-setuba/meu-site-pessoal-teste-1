@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empreendedor - Breno Azevedo Setuba</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #e0e0e0 0%, #9e9e9e 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            padding: 60px 50px;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #616161;
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #4a90e2 0%, #357abd 100%);
+            margin: 40px auto;
+            border-radius: 2px;
+        }
+
+        .content {
+            color: #4a5568;
+            line-height: 1.9;
+            font-size: 16px;
+        }
+
+        .content p {
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
+            border-left: 4px solid #4a90e2;
+            padding: 25px;
+            margin: 35px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.1);
+        }
+
+        .highlight-box h3 {
+            color: #357abd;
+            margin-bottom: 15px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-style: italic;
+            color: #4a5568;
+        }
+
+        .journey-section {
+            margin-top: 40px;
+        }
+
+        .journey-section h2 {
+            color: #2d3748;
+            font-size: 26px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .milestone {
+            background: #f7fafc;
+            padding: 20px 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .milestone::before {
+            content: "🎯";
+            position: absolute;
+            left: 20px;
+            font-size: 24px;
+        }
+
+        .milestone h4 {
+            color: #4a90e2;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .milestone p {
+            margin-bottom: 0;
+            font-size: 15px;
+            text-align: left;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 35px 0;
+        }
+
+        .value-card {
+            background: linear-gradient(135deg, #616161 0%, #424242 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(66, 66, 66, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(66, 66, 66, 0.4);
+        }
+
+        .value-card .emoji {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .value-card h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .value-card p {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #616161 0%, #424242 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(66, 66, 66, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(66, 66, 66, 0.4);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #e2e8f0;
+            color: #a0aec0;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 30px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .milestone {
+                padding-left: 55px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="icon">🚀</div>
+            <h1>Empreendedor Digital</h1>
+            <p class="subtitle">"O futuro pertence àqueles que acreditam na beleza de seus sonhos"</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="content">
+            <p>
+                Empreender não é apenas sobre construir negócios - é sobre transformar visões em realidade,
+                desafiar o status quo e criar valor genuíno para as pessoas ao redor. Minha jornada
+                empreendedora começou com uma simples pergunta: <strong>"Como posso fazer a diferença?"</strong>
+            </p>
+
+            <p>
+                Ao longo dos anos, aprendi que o verdadeiro empreendedorismo está na coragem de começar,
+                na resiliência de continuar e na sabedoria de aprender com cada obstáculo. Cada desafio
+                é uma oportunidade disfarçada, cada fracasso é uma lição valiosa, e cada pequena vitória
+                é um degrau para algo maior.
+            </p>
+
+            <div class="highlight-box">
+                <h3>💡 Minha Filosofia</h3>
+                <p>
+                    "Acredito que o empreendedorismo digital é a ferramenta mais poderosa para criar
+                    impacto em escala. É através da tecnologia, criatividade e perseverança que
+                    podemos construir um futuro melhor - não apenas para nós mesmos, mas para toda
+                    a comunidade ao nosso redor."
+                </p>
+            </div>
+
+            <div class="journey-section">
+                <h2>🛤️ Minha Jornada</h2>
+
+                <div class="milestone">
+                    <h4>Os Primeiros Passos</h4>
+                    <p>
+                        Cada grande jornada começa com um simples passo. Comecei explorando o mundo
+                        digital, aprendendo, testando e descobrindo as infinitas possibilidades que
+                        a internet oferece para quem quer fazer a diferença.
+                    </p>
+                </div>
+
+                <div class="milestone">
+                    <h4>Aprendizado Contínuo</h4>
+                    <p>
+                        A única constante no empreendedorismo é a mudança. Dedico-me diariamente ao
+                        aprendizado de novas habilidades, desde desenvolvimento web até estratégias
+                        de marketing digital e criação de conteúdo.
+                    </p>
+                </div>
+
+                <div class="milestone">
+                    <h4>Construindo no Presente</h4>
+                    <p>
+                        Hoje, trabalho em múltiplos projetos digitais, combinando tecnologia e criatividade.
+                        Cada projeto é uma oportunidade de aprender, crescer e agregar valor para as pessoas.
+                    </p>
+                </div>
+
+                <div class="milestone">
+                    <h4>O Futuro em Construção</h4>
+                    <p>
+                        Minha visão é clara: construir negócios sustentáveis que gerem impacto positivo.
+                        O caminho é longo, mas cada dia é uma nova oportunidade de transformar sonhos em realidade.
+                    </p>
+                </div>
+            </div>
+
+            <h2 style="color: #2d3748; font-size: 26px; margin: 50px 0 25px; text-align: center;">
+                ⚡ Valores que Me Guiam
+            </h2>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="emoji">🎯</div>
+                    <h4>Foco</h4>
+                    <p>Concentração nos objetivos e prioridades certas</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="emoji">💪</div>
+                    <h4>Resiliência</h4>
+                    <p>Persistência diante dos desafios e obstáculos</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="emoji">🌟</div>
+                    <h4>Inovação</h4>
+                    <p>Busca constante por novas soluções e ideias</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="emoji">🤝</div>
+                    <h4>Colaboração</h4>
+                    <p>Acredito no poder das conexões genuínas</p>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="background: linear-gradient(135deg, #f5f5f5 0%, #eeeeee 100%); border-left-color: #616161;">
+                <h3 style="color: #424242;">✨ Uma Mensagem para Você</h3>
+                <p>
+                    Se você está lendo isso e tem um sonho guardado no coração, saiba que o melhor
+                    momento para começar é agora. Não espere pelas condições perfeitas - elas nunca
+                    virão. O que realmente importa é dar o primeiro passo, aprender com o caminho e
+                    nunca desistir dos seus objetivos. O mundo precisa da sua visão única!
+                </p>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back-button">← Voltar ao Início</a>
+        </div>
+
+        <div class="footer">
+            <p>Construindo o futuro, um projeto por vez. 🚀</p>
+        </div>
+    </div>
+</body>
+</html>
