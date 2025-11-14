@@ -110,6 +110,25 @@
             margin-top: 30px;
         }
 
+        .contact-button {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 15px;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+        }
+
         @media (max-width: 480px) {
             .container {
                 padding: 40px 25px;
@@ -144,7 +163,9 @@
             <a href="sobre-criador.html" class="badge" style="text-decoration: none; color: #4a5568;">✨ Criador</a>
             <a href="sobre-desenvolvedor.html" class="badge" style="text-decoration: none; color: #4a5568;">💻 Desenvolvedor</a>
         </div>
-        
+
+        <a href="mailto:breno.setuba@gmail.com" class="contact-button">📧 Entre em Contato</a>
+
         <div class="footer">
             <p>Construindo o futuro, um projeto por vez.</p>
         </div>
